@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,16 +10,42 @@
 
 <body>
     <script type="text/javascript">
-      var socket = io.connect('http://localhost:8080');     
+      var socket = io.connect('http://localhost:8080'); 
+
       socket.on('connected', function (data) {    
         alert("connected")
         socket.emit('login', { socket_id: '1' });
+        
       });
 
       socket.on('someone_connected', function (data) {    
         alert(data.id + " connected")
         
       });
+
+      // let reconnect;
+
+      // socket.on("pong", () => {
+          
+      //     clearTimeout(reconnect);
+      // }) ; 
+
+      // socket.on("ping", () => {
+          
+      //     socket.emit("pong",{});
+      // }) ; 
+
+      // setInterval(function(){
+      //     socket.emit('ping', {});
+          
+      //     reconnect = setTimeout( function() {
+      //         alert('timeout');
+      //         socket.reconnect();
+
+      //       }, 10000);
+      // }, 40000);
+
+      
     </script>
     
 </body>

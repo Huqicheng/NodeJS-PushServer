@@ -1,5 +1,7 @@
 // https://blog.csdn.net/wizard_hu/article/details/50512847
 
+// https://peihsinsu.gitbooks.io/node-js-500-samples/content/mdfiles/socket.io.html
+
 /*
 *   1. npm install socket.io
 *   2. node server.js
@@ -13,6 +15,9 @@ var app = require('http').createServer(handler),
 
 app.listen(8080);
 io.set('log level', 1);//将socket.io中的debug信息关闭
+
+io.set('heartbeat timeout', 10000); 
+io.set('heartbeat interval', 40000);
 
 var sockets = {}
 
@@ -28,7 +33,6 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-    socket[socket]
 
     socket.emit('connected', {});
 
@@ -40,11 +44,16 @@ io.sockets.on('connection', function (socket) {
       socket.broadcast.emit('someone_connected', {'id' : data.socket_id})
     });
 
+    
+
     socket.on('disconnect', function(data) {
       console.log('Got disconnect!');
 
-      delete sockets[data.id]
+      delete sockets[data.id];
     });
 
-
 });
+
+
+
+
