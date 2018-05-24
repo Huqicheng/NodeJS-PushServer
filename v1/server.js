@@ -1,41 +1,43 @@
-var sio  = require('socket.io');
+// https://blog.csdn.net/wizard_hu/article/details/50512847
 
-var express = require('express');
+var app = require('http').createServer(handler), 
+    io = require('socket.io').listen(app), 
+    fs = require('fs')
 
-var app  =  module.export = express.createServer();
+app.listen(8080);
+io.set('log level', 1);//将socket.io中的debug信息关闭
 
-var socketUser = {};
+var sockets = {}
 
-io  = sio.listen(app);
+function handler (req, res) {
+  fs.readFile(__dirname + '/index.html',function (err, data) {  
+    if (err) {
+      res.writeHead(500);
+      return res.end('Error loading index.html');
+    }    
+    res.writeHead(200, {'Content-Type': 'text/html'});    
+    res.end(data);
+  });
+}
 
-io.set('log level', 1);
+io.sockets.on('connection', function (socket) {
+    socket[socket]
 
-io.sockets.on('connection', function (socket){
+    socket.emit('connected', {});
 
-    io.sockets.emit('conn', { text: 'socketId:'+socket.id});
+    socket.on('login', function (data) {
+      console.log(data.socket_id);
 
-    socket.on('login', function (data,fn) {
+      sockets[data.socket_id] = socket;
 
-        socketUser[socket.id] = {'c_id':data.c_id,'guid':data.guid,'price':data.price,'socket':socket};
-
+      socket.broadcast.emit('someone_connected', {'id' : data.socket_id})
     });
 
-   
+    socket.on('disconnect', function(data) {
+      console.log('Got disconnect!');
 
-    socket.on('disconnect', function(){
-
-        console.log('-链接断开['+socket.id+']-');
-
-        delete socketUser[socket.id];
-
+      delete sockets[data.id]
     });
 
-    socket.on('postprice', function (data,fn) {
-
-        console.log('-用户出价['+data.guid+']-');
-
-        pushprice(data.guid);
-
-    });
 
 });
