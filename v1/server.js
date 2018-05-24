@@ -1,5 +1,12 @@
 // https://blog.csdn.net/wizard_hu/article/details/50512847
 
+/*
+*   1. npm install socket.io
+*   2. node server.js
+*/
+
+
+
 var app = require('http').createServer(handler), 
     io = require('socket.io').listen(app), 
     fs = require('fs')
