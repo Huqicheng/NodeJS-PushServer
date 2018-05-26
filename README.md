@@ -9,8 +9,6 @@ Objective: <br>
 1. Implementation of a socket server running on multiple machines. <br>
 2. Clients connected to different servers can communicate with each other. <br>
 
-<br>
-
 #### v2.0
 Solution: Using ONE Redis Server to implement the Pub/Sub pattern.
 
