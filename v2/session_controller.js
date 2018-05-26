@@ -1,10 +1,7 @@
 redis = require('redis');
 
 function SessionController (user,channel) {
-	// session controller class for storing redis connections
-	// this is more a workaround for the proof-of-concept
-	// in "real" applications session handling should NOT
-	// be done like this
+	
 	this.sub = redis.createClient();
 	this.pub = redis.createClient();
 	
