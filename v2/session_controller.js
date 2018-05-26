@@ -1,5 +1,3 @@
-// https://github.com/steffenwt/nodejs-pub-sub-chat-demo/blob/master/app_redis.js
-
 redis = require('redis');
 
 function SessionController (user,channel) {
