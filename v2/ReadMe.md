@@ -17,3 +17,7 @@ https://redis.io
 2. In another terminal 2, run 'node server_2.js' (port 7999).
 3. Open a browser, enter 'localhost:8000' and similarly, enter 'localhost:7999' in another browser.
 4. Let's see what happens.
+
+#### 3. the next step
+
+1. Using nginx to do Reverse Proxy (as v2.1)
