@@ -5,8 +5,8 @@
 Objective: Implementation of a socket server running on one machine.
 
 ### v2
-
-1. Objective: Implementation of a socket server running on multiple machines. <br>
+Objective: <br>
+1. Implementation of a socket server running on multiple machines. <br>
 2. Clients connected to different servers can communicate with each other. <br>
 
 <br>
