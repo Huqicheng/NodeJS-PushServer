@@ -15,3 +15,7 @@ Solution: Using ONE Redis Server to implement the Pub/Sub pattern.
 #### v2.1 
 
 Using Nginx to do Reverse Proxy.
+
+
+#### Reference
+[redis master&slave](https://blog.csdn.net/RobertoHuang/article/details/70766809)
