@@ -34,3 +34,7 @@ https://redis.io
 #### 3. the next step
 
 1. Using the cluster module to build the nodejs cluster on one machine (as v2.2)
+
+
+## References
+[How to configure nginx for socket.io](https://stackoverflow.com/questions/19236006/how-to-get-socket-io-example-working-with-nginx-reverse-proxy-and-https)
