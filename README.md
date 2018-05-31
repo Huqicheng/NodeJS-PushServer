@@ -18,4 +18,5 @@ Using Nginx to do Reverse Proxy.
 
 
 #### Reference
-[redis master&slave](https://blog.csdn.net/RobertoHuang/article/details/70766809)
+[redis master & slave](https://blog.csdn.net/RobertoHuang/article/details/70766809)
+[nodejs + cluster](http://blog.fens.me/nodejs-core-cluster/)
