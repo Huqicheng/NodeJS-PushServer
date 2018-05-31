@@ -16,6 +16,9 @@ Solution: Using ONE Redis Server to implement the Pub/Sub pattern.
 
 Using Nginx to do Reverse Proxy.
 
+#### v2.2
+
+Using cluster module to build a nodejs cluster on one machine (running on different core of the cpu).
 
 #### Reference
 [redis master & slave](https://blog.csdn.net/RobertoHuang/article/details/70766809)
