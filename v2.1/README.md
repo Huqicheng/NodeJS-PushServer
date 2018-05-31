@@ -12,7 +12,7 @@ https://redis.io
 ```
 
 #### 1.3 install nginx
-'''
+```
     for mac os, 
       1. install brew: 
           ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -22,8 +22,7 @@ https://redis.io
           cd /usr/local/etc/nginx
           sudo vim nginx.conf
           for nginx.conf, replace the configuration with nginx.conf in v2.1 folder
-        
-'''
+```
 
 #### 2. run the demo
 
