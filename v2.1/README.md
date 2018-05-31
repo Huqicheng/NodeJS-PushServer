@@ -29,7 +29,7 @@ https://redis.io
 1. In terminal 1, run 'node server.js' (port 8000).
 2. In another terminal 2, run 'node server_2.js' (port 7999).
 3. run nginx with the nginx.conf configuration using command "sudo nginx"
-4. Let's see what happens.
+4. enter "localhost:80" to connect.
 
 #### 3. the next step
 
