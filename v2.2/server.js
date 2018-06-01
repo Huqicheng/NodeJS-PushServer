@@ -87,8 +87,13 @@ let port = 8000;
 let server_ = server();
 
 // using sticky to ensure that the connection from the same ip will be connected to the same worker
+// Default: the worker number will be the number of cores of your cpu
 
-if (!sticky.listen(server_, port)){
+options = {
+  workers : 2
+}
+
+if (!sticky.listen(server_, port, options)){
     // master
     server_.once("listening", function() {
       console.log('server started on 8000 port.');
